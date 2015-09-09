@@ -3,27 +3,85 @@
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
---> 
-<form class="contactInformation" role="form">
-    <div class="form-group">
-      <label for="date">Date:</label>
-      <input type="date" class="form-control">
-    </div>
-    <div class="form-group form-inline">
-      <label for="name">Name:</label>
-      <input type="text" class="form-control clientNameForm" placeholder="First Name" required>
-      <input type="text" class="form-control clientNameForm" placeholder="Last Name" required>
-    </div>
-    <div class="form-group form-inline">
-      <label for="gender">Gender:</label>
-      <input type="radio" class="form-control clientGender" >
-      <input type="radio" class="form-control clientGender" >
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control clientEmail" placeholder="Enter email" required>
-    </div>
-</form>
-<form class="emergencyContact" role="form">
-    
-</form>
+-->
+<div id="contactInfoContainer" class="container-fluid col-sm-9 col-md-9 col-lg-9">
+    <form class="contactInformation" role="form">
+        <div class="form-group form-inline col-sm-12">
+          <label for="date" class="col-sm-2 col-md-2 col-lg-2">Date:</label>
+          <input type="date" class="form-control col-sm-10 col-md-6 col-lg-6">
+        </div>
+        <div class="form-group form-inline col-sm-12">
+          <label for="name" class="col-sm-2 col-md-2 col-lg-2">Name:</label>
+          <input type="text" class="form-control clientNameForm col-sm-12 col-md-5 col-lg-5" placeholder="First Name" required>
+          <input type="text" class="form-control clientNameForm col-sm-12 col-md-5 col-lg-5" placeholder="Last Name" required>
+        </div>
+        <div class="form-group form-inline col-sm-12">
+          <label for="gender" class="col-sm-2 col-md-2 col-lg-2">Gender:</label>
+          Male <input type="radio" class="form-control clientGender" name="sex" value="male" checked>
+          Female <input type="radio" class="form-control clientGender" name="sex" value="female">
+        </div>
+        <div class="form-group form-inline col-sm-12">
+          <label for="DOB" class="col-sm-2 col-md-2 col-lg-2">DOB:</label>
+          <input type="date" class="form-control clientDOB col-sm-6 col-md-6 col-lg-6" required>
+          <label for="age" class="col-sm-2 col-md-2 col-lg-2">Age:</label>
+          <input type="number" class="form-control clientAge col-sm-2 col-md-2 col-lg-2" min="18">
+        </div>
+        <div class="form-group form-inline col-sm-12">
+          <label for="phone" class="col-sm-2 col-md-2 col-lg-2">Phone:</label>
+          <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Daytime number"required>
+          <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Evening number">
+        </div>
+        <div class="form-group form-inline col-sm-12">
+          <label for="phone" class="col-sm-2 col-md-2 col-lg-2">Cell:</label>
+          <input type="tel" class="form-control col-sm-6 col-md-6 col-lg-6" placeholder="Cell number" required>
+        </div>
+        <div class="form-group form-inline col-sm-12">
+          <label for="email" class="col-sm-2 col-md-2 col-lg-2">Email:</label>
+          <input type="email" class="form-control clientEmail col-sm-10 col-md-10 col-lg-10" placeholder="Enter email" required>
+        </div>
+    </form>
+    <label id="emergencyContactTitle" class="form-group col-sm-12">EMERGENCY CONTACT 1</label>
+    <form class="emergencyContact" role="form">
+        <div class="form-group form-inline col-sm-12">
+          <label for="name" class="col-sm-2 col-md-2 col-lg-2">Name: </label>
+          <input type="text" class="form-control col-sm-10 col-md-6 col-lg-6" placeholder="Name ...">
+        </div>
+        <div class="form-group form-inline col-sm-12">
+          <label for="relationship" class="col-sm-2 col-md-2 col-lg-2">Relationship: </label>
+          <input type="text" class="form-control col-sm-10 col-md-6 col-lg-6" placeholder="Relationship ...">
+        </div>
+        <div class="form-group form-inline col-sm-12">
+          <label for="phone" class="col-sm-2 col-md-2 col-lg-2">Phone:</label>
+          <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Daytime number"required>
+          <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Evening number">
+        </div>
+        <div class="form-group form-inline col-sm-12">
+          <label for="phone" class="col-sm-2 col-md-2 col-lg-2">Cell:</label>
+          <input type="tel" class="form-control col-sm-6 col-md-6 col-lg-6" placeholder="Cell number" required>
+        </div>
+    </form>
+    <label id="emergencyContactTitle" class="form-group col-sm-12">EMERGENCY CONTACT 2</label>
+    <form class="emergencyContact" role="form">
+        <div class="form-group form-inline col-sm-12">
+          <label for="name" class="col-sm-2 col-md-2 col-lg-2">Name: </label>
+          <input type="text" class="form-control col-sm-10 col-md-6 col-lg-6" placeholder="Name ...">
+        </div>
+        <div class="form-group form-inline col-sm-12">
+          <label for="relationship" class="col-sm-2 col-md-2 col-lg-2">Relationship: </label>
+          <input type="text" class="form-control col-sm-10 col-md-6 col-lg-6" placeholder="Relationship ...">
+        </div>
+        <div class="form-group form-inline col-sm-12">
+          <label for="phone" class="col-sm-2 col-md-2 col-lg-2">Phone:</label>
+          <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Daytime number"required>
+          <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Evening number">
+        </div>
+        <div class="form-group form-inline col-sm-12">
+          <label for="phone" class="col-sm-2 col-md-2 col-lg-2">Cell:</label>
+          <input type="tel" class="form-control col-sm-6 col-md-6 col-lg-6" placeholder="Cell number" required>
+        </div>
+    </form>
+</div>
+<div class="container-fluid col-sm-3 col-md-3 col-lg-3">
+    <image src="http://emotibot.net/shared/post_media/images/full_sized/24653.png" class="container-fluid clientPhoto">
+    <button>Add Contact Photo</button>
+</div>
