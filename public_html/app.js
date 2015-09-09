@@ -22,7 +22,6 @@ trainersApp.controller('getTabs', ['$scope', '$location', function($scope, $loca
         
         $scope.selectedTab = $scope.tabs[$scope.setTab];    
         $scope.setSelectedTab = function(tab) {
-            console.log(tab)
             $scope.selectedTab = tab;
         };
         $scope.tabClass = function(tab) {
