@@ -11,6 +11,10 @@ trainersApp.controller('getTabs', ['$scope', '$location', function($scope, $loca
     $scope.tabBuilder = function(){
          $scope.tabs = [
             { link : '#/home', label : 'Home' },
+            { link : '#/assessment', label : 'Assessment' },
+            { link : '#/calendar', label : 'Calendar' },
+            { link : '#/contact', label : 'Contact Info' },
+            { link : '#/goal', label : 'Goal' },
             { link : '#/program', label : 'Program' }
           ]; 
         $scope.setTab = null;
@@ -49,11 +53,27 @@ trainersApp.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('home', {
             url: '/home',
-            templateUrl: 'tabs/tempHome.html'
+            templateUrl: 'source/homePage.html'
+        })
+        .state('assessment',{
+            url: "/assessment",
+            templateUrl: 'source/client/assessment/assessmentPage.html'
+        })
+        .state('calendar',{
+            url: "/calendar",
+            templateUrl: 'source/client/calendar/clientCalendar.html'
+        })
+        .state('contact',{
+            url: "/contact",
+            templateUrl: 'source/client/contactInfo/contactInfoPage.html'
+        })
+        .state('goal',{
+            url: "/goal",
+            templateUrl: 'source/client/goal/clientGoalPage.html'
         })
         .state('program',{
             url: "/program",
-            templateUrl: 'tabs/workoutProgram.html'
+            templateUrl: 'source/client/program/programPage.html'
         });
     // this trick must be done so that we don't receive
     // `Uncaught Error: [$injector:cdep] Circular dependency found`
