@@ -12,4 +12,5 @@ and open the template in the editor.
 }
 .center{
     text-align: center;
+    alignment-adjust: central;
 }
