@@ -5,7 +5,7 @@
  */
  
  
-var trainersApp = angular.module('trainersApp', ['ui.router','assessmentControllerModule']);
+var trainersApp = angular.module('trainersApp', ['ui.router','assessmentControllerModule','contactInfoControllerModule']);
 trainersApp.controller('mainController',['$scope','$location', 'saveTab', function($scope,$location,saveTab){
     $scope.newClient = function(){
         saveTab.setTab({link: "#/contact", label: "Contact Info"})
@@ -25,9 +25,7 @@ trainersApp.controller('getTabs', ['$scope', '$location', 'saveTab', function($s
         
         $scope.currentPath = $location.path();
         $scope.selectedTab = saveTab.setTab();
-        console.log(saveTab.setTab())
         if($scope.selectedTab === undefined){
-            console.log("am i here")
             $scope.selectedTab = $scope.tabs[0];  
         }
         $scope.setSelectedTab = function(tab) {
