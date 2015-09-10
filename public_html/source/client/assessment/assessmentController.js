@@ -6,15 +6,13 @@
 var assessmentControllerModule = angular.module('assessmentControllerModule',[]);
 
 assessmentControllerModule.controller('assessmentController',["$scope", function($scope){
-        
         $scope.assessmentTabs = [
             {label:'Photo'},
             {label:'Measurements'},
             {label:'Movements'},
             {label:'Tracker'}
         ];
-        $scope.tabIsSet = $scope.assessmentTabs[0];
-        //$scope.selectedTab = $scope.tabs[$scope.setTab];    
+        $scope.tabIsSet = $scope.assessmentTabs[0];    
         $scope.selectedTab = function(tab){
             $scope.tabIsSet = tab;
         }
