@@ -5,7 +5,7 @@
  */
  
  
-var trainersApp = angular.module('trainersApp', ['ui.router']);
+var trainersApp = angular.module('trainersApp', ['ui.router','assessmentControllerModule']);
 
 trainersApp.controller('getTabs', ['$scope', '$location', function($scope, $location){
     $scope.tabBuilder = function(){
@@ -20,14 +20,15 @@ trainersApp.controller('getTabs', ['$scope', '$location', function($scope, $loca
         $scope.setTab = null;
         $scope.currentPath = $location.path();
         
-        $scope.selectedTab = $scope.tabs[$scope.setTab];    
+        $scope.selectedTab = $scope.tabs[0];    
         $scope.setSelectedTab = function(tab) {
             $scope.selectedTab = tab;
         };
         $scope.tabClass = function(tab) {
             if ($scope.selectedTab === tab) {
                 return "active";
-            } else {
+            } 
+            else {
                 return "";
             } 
         };
@@ -48,7 +49,7 @@ trainersApp.directive('tabsPanel', function () {
     };
 });
 trainersApp.config(function ($stateProvider, $urlRouterProvider) {
-    //$urlRouterProvider.otherwise("/login");
+    $urlRouterProvider.otherwise("/home");
     $stateProvider
         .state('home', {
             url: '/home',

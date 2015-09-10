@@ -4,18 +4,19 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse" ng-controller="assessmentController">
     <div class="container-fluid">
         <div class="navbar-header center">
             <a class="navbar-brand" href="">ASSESSMENT</a>
         </div>
         <div>
-            <ul class="nav navbar-nav">
-                <li class=""><a href="">Photos</a></li>
-                <li class="active"><a href="">Measurements</a></li>
-                <li class=""><a href="">Movements</a></li>
-                <li class=""><a href="">Tracker</a></li>
+            <ul class="nav navbar-nav" >
+                <li ng-class="activeNavTab(tab)" ng-repeat="tab in assessmentTabs" tab="tab">
+                    <a href="" ng-click="selectedTab(tab)"><h4 id="{{tab.label}}" class="menutitle">{{tab.label}}</h4></a>
+                </li>
             </ul>
         </div>
+    </div>
+    <div class="container-fluid">
     </div>
 </nav>
