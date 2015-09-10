@@ -96,6 +96,6 @@ trainersApp.service('saveTab', function(){
                 savedTab = selectedTab;
             }
             return savedTab;
-        }
+        };
         return tab;
 });
