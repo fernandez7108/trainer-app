@@ -1,7 +1,11 @@
 <section>
-    <ul class="nav navbar-nav" >
-        <li ng-class="tabClass(tab)" class="titlemenu" ng-repeat="tab in tabs" tab="tab">
-                    <a href="{{tab.link}}" ng-click="setSelectedTab(tab)"><h4 id="{{tab.label}}" class="menutitle">{{tab.label}}</h4></a>
-        </li>
-    </ul>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav" >
+                <li ng-class="tabClass(tab)" ng-repeat="tab in tabs" tab="tab">
+                            <a href="{{tab.link}}" ng-click="setSelectedTab(tab)"><h4 id="{{tab.label}}">{{tab.label}}</h4></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </section>

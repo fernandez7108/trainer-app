@@ -6,8 +6,13 @@
  
  
 var trainersApp = angular.module('trainersApp', ['ui.router','assessmentControllerModule']);
-
-trainersApp.controller('getTabs', ['$scope', '$location', function($scope, $location){
+trainersApp.controller('mainController',['$scope','$location', 'saveTab', function($scope,$location,saveTab){
+    $scope.newClient = function(){
+        saveTab.setTab("Contact Info")
+        $location.path('/contact');
+    }
+}]);
+trainersApp.controller('getTabs', ['$scope', '$location', 'saveTab', function($scope, $location, saveTab){
     $scope.tabBuilder = function(){
          $scope.tabs = [
             { link : '#/home', label : 'Home' },
@@ -17,15 +22,20 @@ trainersApp.controller('getTabs', ['$scope', '$location', function($scope, $loca
             { link : '#/goal', label : 'Goal' },
             { link : '#/program', label : 'Program' }
           ]; 
-        $scope.setTab = null;
-        $scope.currentPath = $location.path();
         
-        $scope.selectedTab = $scope.tabs[0];    
+        $scope.currentPath = $location.path();
+        $scope.selectedTab = saveTab.setTab();
+        console.log(saveTab.setTab())
+        if($scope.selectedTab === undefined){
+            console.log("am i here")
+            $scope.selectedTab = $scope.tabs[0];  
+        }
         $scope.setSelectedTab = function(tab) {
             $scope.selectedTab = tab;
+            saveTab.setTab(tab);
         };
         $scope.tabClass = function(tab) {
-            if ($scope.selectedTab === tab) {
+            if ($scope.selectedTab.label === tab.label) {
                 return "active";
             } 
             else {
@@ -77,4 +87,15 @@ trainersApp.config(function ($stateProvider, $urlRouterProvider) {
         });
     // this trick must be done so that we don't receive
     // `Uncaught Error: [$injector:cdep] Circular dependency found`
+});
+trainersApp.service('saveTab', function(){ 
+        var tab = {};
+        var savedTab;
+        tab.setTab = function(selectedTab){
+            if(selectedTab){
+                savedTab = selectedTab;
+            }
+            return savedTab;
+        }
+        return tab;
 });

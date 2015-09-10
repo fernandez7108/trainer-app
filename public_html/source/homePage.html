@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<div id="bodyContainer" class="container-fluid">
+<div id="bodyContainer" class="container-fluid" ng-controller="mainController">
     <div id="landingPageBody" class="container-fluid">
         <div id="clientListContainer" class="container-fluid col-sm-12 col-md-4 col-lg-4">
             <header class="headerTitleBars">
@@ -12,7 +12,7 @@ and open the template in the editor.
                     <p class="center">CLIENT LIST</p>
                 </div>
                 <div id="addClientIcon" class="container-fluid col-sm-2">
-                    <a href="" class="btn btn-info">
+                    <a ng-click="newClient()" class="btn btn-info">
                         <span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-user"></span>
                     </a>
                 </div>
