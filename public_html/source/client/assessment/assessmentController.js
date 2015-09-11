@@ -6,6 +6,7 @@
 var assessmentControllerModule = angular.module('assessmentControllerModule',[]);
 
 assessmentControllerModule.controller('assessmentController',["$scope", function($scope){
+        
         $scope.assessmentTabs = [
             {label:'Photo'},
             {label:'Measurements'},

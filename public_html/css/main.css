@@ -14,6 +14,26 @@ and open the template in the editor.
     text-align: center;
     alignment-adjust: central;
 }
+.center-header{
+    text-align: center;
+    background-color: lightgray;
+    border-radius: 25px 25px 0 0;
+    border: 1px solid black;
+}
+.form-container{
+    border: 1px solid black;
+    border-radius: 0 0 15px 15px;
+    padding: 10px;
+}
+.halfLength{
+    min-height: 30%;
+}
+.fullLength{
+    min-height: 80%;
+}
+.topPadding{
+    margin-top: 10px;
+}
 .navbar-brand{
     margin: 0;
     padding: 15px 5px 15px 5px;
@@ -33,4 +53,10 @@ and open the template in the editor.
 }
 .contactInformation .ng-invalid, .emergencyContact .ng-invalid{
     background: yellow;
+}
+#assessmentMeasurementContainer{
+    margin-top: 15px;
+}
+#assessmentMeasurementContainer .formSection{
+    border-bottom: 1px solid lightgrey;
 }

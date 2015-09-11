@@ -4,4 +4,98 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<h1>MEASUREMENTS</h1>
+<div id="assessmentMeasurementContainer" class="container-fluid">
+    <div id="leftSide" class="col-lg-6 col-md-6 col-sm-12">
+        <div id="clientBasicMeasurementsDiv" class="col-sm-12 halfLength">
+            <header class="center-header">
+                <h3>Basic Measurements</h1>
+            </header>
+            <div class="container-fluid form-container">
+                <form name="basicMeasurement" role="form">
+                    <div class="container-fluid formSection">
+                        <div class="form-group form-inline col-sm-6 container-fluid">
+                            <label for="date" class="col-lg-5 col-md-5 col-sm-5">Weight(lbs)</label>
+                            <input type="number" class="form-control col-lg-7 col-md-7 col-sm-7" ng-model="clientMeasurements.weight" required>
+                        </div>
+                        <div class="form-group form-inline col-sm-6 container-fluid">
+                            <label for="date" class="col-lg-5 col-md-5 col-sm-5">Height(in)</label>
+                            <input type="number" class="form-control col-lg-7 col-md-7 col-sm-7" ng-model="clientMeasurements.height" required>
+                        </div>
+                        <div class="form-group form-inline col-sm-6 container-fluid">
+                            <label for="date" class="col-lg-5 col-md-5 col-sm-5">Blood Pressure</label>
+                            <input type="number" class="form-control col-lg-7 col-md-7 col-sm-7" ng-model="clientMeasurements.bloodPressure">
+                        </div>
+                        <div class="form-group form-inline col-sm-6 container-fluid">
+                            <label for="date" class="col-lg-5 col-md-5 col-sm-5">Resting HR</label>
+                            <input type="number" class="form-control col-lg-7 col-md-7 col-sm-7" ng-model="clientMeasurements.restingHR">
+                        </div>
+                    </div>
+                    <div class="container-fluid topPadding">
+                        <div class="form-group form-inline col-sm-6 container-fluid">
+                            <label for="date" class="col-lg-5 col-md-5 col-sm-5">Left Arm</label>
+                            <input type="number" class="form-control col-lg-7 col-md-7 col-sm-7" ng-model="clientMeasurements.leftArm">
+                        </div>
+                        <div class="form-group form-inline col-sm-6 container-fluid">
+                            <label for="date" class="col-lg-5 col-md-5 col-sm-5">Right Arm</label>
+                            <input type="number" class="form-control col-lg-7 col-md-7 col-sm-7" ng-model="clientMeasurements.rightArm">
+                        </div>
+                        <div class="form-group form-inline col-sm-6 container-fluid">
+                            <label for="date" class="col-lg-5 col-md-5 col-sm-5">Left Thigh</label>
+                            <input type="number" class="form-control col-lg-7 col-md-7 col-sm-7" ng-model="clientMeasurements.leftThigh">
+                        </div>
+                        <div class="form-group form-inline col-sm-6 container-fluid">
+                            <label for="date" class="col-lg-5 col-md-5 col-sm-5">Right Thigh</label>
+                            <input type="number" class="form-control col-lg-7 col-md-7 col-sm-7" ng-model="clientMeasurements.rightThigh">
+                        </div>
+                        <div class="form-group form-inline col-sm-6 container-fluid">
+                            <label for="date" class="col-lg-5 col-md-5 col-sm-5">Left Calf</label>
+                            <input type="number" class="form-control col-lg-7 col-md-7 col-sm-7" ng-model="clientMeasurements.leftCalf">
+                        </div>
+                        <div class="form-group form-inline col-sm-6 container-fluid">
+                            <label for="date" class="col-lg-5 col-md-5 col-sm-5">Right Calf</label>
+                            <input type="number" class="form-control col-lg-7 col-md-7 col-sm-7" ng-model="clientMeasurements.rightCalf">
+                        </div>
+                        <div class="form-group form-inline col-sm-6 container-fluid">
+                            <label for="date" class="col-lg-5 col-md-5 col-sm-5">Chest</label>
+                            <input type="number" class="form-control col-lg-7 col-md-7 col-sm-7" ng-model="clientMeasurements.chest">
+                        </div>
+                        <div class="form-group form-inline col-sm-6 container-fluid">
+                            <label for="date" class="col-lg-5 col-md-5 col-sm-5">Waist</label>
+                            <input type="number" class="form-control col-lg-7 col-md-7 col-sm-7" ng-model="clientMeasurements.waist">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="clientMeasurementResultsDiv" class="col-sm-12 halfLength">
+            <header class="center-header">
+                <h3>Results</h1>
+            </header>
+            <div class="container-fluid form-container">
+                
+            </div>
+        </div>
+    </div>
+    <div id="rightSide" class="col-lg-6 col-md-6 col-sm-12">
+        <div id="clientBodyFatMeasurementDiv" class="col-sm-12 fullLength">
+            <header class="center-header">
+                <h3>Body Fat %</h1>
+            </header>
+            <div class="container-fluid form-container">
+                <form>
+                    <div class="col-sm-12">
+                        <div class="col-sm-6">
+                            
+                        </div>
+                        <div class="col-sm-6">
+                            
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
