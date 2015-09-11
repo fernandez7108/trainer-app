@@ -5,7 +5,7 @@
  */
  
  
-var trainersApp = angular.module('trainersApp', ['ui.router','assessmentControllerModule','contactInfoControllerModule']);
+var trainersApp = angular.module('trainersApp', ['ui.router','ui.mask','assessmentControllerModule','contactInfoControllerModule']);
 trainersApp.controller('mainController',['$scope','$location', 'saveTab', function($scope,$location,saveTab){
     $scope.newClient = function(){
         saveTab.setTab({link: "#/contact", label: "Contact Info"})

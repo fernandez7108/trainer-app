@@ -24,3 +24,13 @@ and open the template in the editor.
 .navbar-nav{
     padding: 0px 5px 0px 5px;
 }
+#contactInfoContainer{
+    margin-top: 10px;
+}
+.contactInformation, .emergencyContact{
+    transition: all linear 0.5s;
+    background: transparent;
+}
+.contactInformation .ng-invalid, .emergencyContact .ng-invalid{
+    background: yellow;
+}

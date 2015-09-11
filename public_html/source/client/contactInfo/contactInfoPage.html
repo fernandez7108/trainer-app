@@ -4,17 +4,17 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<div class="container-fluid" ng-controller="contactInfoController">
-    <div id="contactInfoContainer" class="container-fluid col-sm-9 col-md-9 col-lg-9">
-        <form class="contactInformation" role="form">
+<div id="contactInfoContainer" class="container-fluid" ng-controller="contactInfoController">
+    <div id="contactInfoForm" class="container-fluid col-sm-9 col-md-9 col-lg-9">
+        <form class="contactInformation" role="form" name="clientContactForm">
             <div class="form-group form-inline col-sm-12">
               <label for="date" class="col-sm-2 col-md-2 col-lg-2">Date:</label>
               <input type="date" class="form-control col-sm-10 col-md-6 col-lg-6" ng-model="currentDate">
             </div>
             <div class="form-group form-inline col-sm-12">
               <label for="name" class="col-sm-2 col-md-2 col-lg-2">Name:</label>
-              <input type="text" class="form-control clientNameForm col-sm-12 col-md-5 col-lg-5" placeholder="First Name" ng-model="client.firstName" required>
-              <input type="text" class="form-control clientNameForm col-sm-12 col-md-5 col-lg-5" placeholder="Last Name" ng-model="client.lastName" required>
+              <input type="text" class="form-control clientNameForm col-sm-12 col-md-5 col-lg-5" placeholder="First Name" ng-model="clientName.first" required uppercased>
+              <input type="text" class="form-control clientNameForm col-sm-12 col-md-5 col-lg-5" placeholder="Last Name" ng-model="clientName.last" required uppercased>
             </div>
             <div class="form-group form-inline col-sm-12">
               <label for="gender" class="col-sm-2 col-md-2 col-lg-2">Gender:</label>
@@ -25,27 +25,25 @@ and open the template in the editor.
               <label for="DOB" class="col-sm-2 col-md-2 col-lg-2">DOB:</label>
               <input type="date" class="form-control clientDOB col-sm-6 col-md-6 col-lg-6" required ng-model="client.DOB">
               <label for="age" class="col-sm-2 col-md-2 col-lg-2">Age:</label>
-              <input type="number" class="form-control clientAge col-sm-2 col-md-2 col-lg-2" ng-click="calculateAge()" ng-model="client.age">
+              <input type="number" class="form-control clientAge col-sm-2 col-md-2 col-lg-2" ng-model="client.age">
             </div>
             <div class="form-group form-inline col-sm-12">
               <label for="phone" class="col-sm-2 col-md-2 col-lg-2">Phone:</label>
-              <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Daytime number" ng-model="client.daytimeNumber" required>
-              <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Evening number" ng-model="client.eveningNumber">
+              <input type="text" class="form-control col-sm-5 col-md-5 col-lg-5" ui-mask="1(999) 999-9999" ng-model="client.daytimeNumber" phone-number required />
+              <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" ui-mask="1(999) 999-9999" ng-model="client.eveningNumber" phone-number>
             </div>
             <div class="form-group form-inline col-sm-12">
               <label for="phone" class="col-sm-2 col-md-2 col-lg-2">Cell:</label>
-              <input type="tel" class="form-control col-sm-6 col-md-6 col-lg-6" placeholder="Cell number" ng-model="client.cellNumber" required>
+              <input type="tel" class="form-control col-sm-6 col-md-6 col-lg-6" ui-mask="1(999) 999-9999" ng-model="client.cellNumber" required>
             </div>
             <div class="form-group form-inline col-sm-12">
               <label for="email" class="col-sm-2 col-md-2 col-lg-2">Email:</label>
-              <input type="email" class="form-control clientEmail col-sm-10 col-md-10 col-lg-10" placeholder="Enter email" ng-model="client.email" required>
+              <input type="email" class="form-control clientEmail col-sm-10 col-md-10 col-lg-10" placeholder="john.smith@email.com" ng-model="client.email" required>
             </div>
-        </form>
-        <label id="emergencyContactTitle" class="form-group col-sm-12">EMERGENCY CONTACT 1</label>
-        <form class="emergencyContact" role="form">
+            <label id="emergencyContactTitle" class="form-group col-sm-12">EMERGENCY CONTACT 1</label>
             <div class="form-group form-inline col-sm-12">
               <label for="name" class="col-sm-2 col-md-2 col-lg-2">Name: </label>
-              <input type="text" class="form-control col-sm-10 col-md-6 col-lg-6" placeholder="Name ..." ng-model="client.emergencyContact1.name">
+              <input type="text" class="form-control col-sm-10 col-md-6 col-lg-6" placeholder="Name ..." ng-model="client.emergencyContact1.name" required>
             </div>
             <div class="form-group form-inline col-sm-12">
               <label for="relationship" class="col-sm-2 col-md-2 col-lg-2">Relationship: </label>
@@ -53,16 +51,14 @@ and open the template in the editor.
             </div>
             <div class="form-group form-inline col-sm-12">
               <label for="phone" class="col-sm-2 col-md-2 col-lg-2">Phone:</label>
-              <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Daytime number" ng-model="client.emergencyContact1.daytimeNumber" required>
-              <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Evening number" ng-model="client.emergencyContact1.eveningNumber">
+              <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" ui-mask="1(999) 999-9999" ng-model="client.emergencyContact1.daytimeNumber" required>
+              <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" ui-mask="1(999) 999-9999" ng-model="client.emergencyContact1.eveningNumber">
             </div>
             <div class="form-group form-inline col-sm-12">
               <label for="phone" class="col-sm-2 col-md-2 col-lg-2">Cell:</label>
-              <input type="tel" class="form-control col-sm-6 col-md-6 col-lg-6" placeholder="Cell number" ng-model="client.emergencyContact1.cellNumber" required>
+              <input type="tel" class="form-control col-sm-6 col-md-6 col-lg-6" ui-mask="1(999) 999-9999" ng-model="client.emergencyContact1.cellNumber" required>
             </div>
-        </form>
-        <label id="emergencyContactTitle" class="form-group col-sm-12">EMERGENCY CONTACT 2</label>
-        <form class="emergencyContact" role="form">
+            <label id="emergencyContactTitle" class="form-group col-sm-12">EMERGENCY CONTACT 2</label>
             <div class="form-group form-inline col-sm-12">
               <label for="name" class="col-sm-2 col-md-2 col-lg-2">Name: </label>
               <input type="text" class="form-control col-sm-10 col-md-6 col-lg-6" placeholder="Name ..." ng-model="client.emergencyContact2.name">
@@ -73,17 +69,20 @@ and open the template in the editor.
             </div>
             <div class="form-group form-inline col-sm-12">
               <label for="phone" class="col-sm-2 col-md-2 col-lg-2">Phone:</label>
-              <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Daytime number" ng-model="client.emergencyContact2.daytimeNumber" required>
-              <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Evening number" ng-model="client.emergencyContact2.eveningNumber">
+              <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" ui-mask="1(999) 999-9999" ng-model="client.emergencyContact2.daytimeNumber">
+              <input type="tel" class="form-control col-sm-5 col-md-5 col-lg-5" ui-mask="1(999) 999-9999" ng-model="client.emergencyContact2.eveningNumber">
             </div>
             <div class="form-group form-inline col-sm-12">
               <label for="phone" class="col-sm-2 col-md-2 col-lg-2">Cell:</label>
-              <input type="tel" class="form-control col-sm-6 col-md-6 col-lg-6" placeholder="Cell number" ng-model="client.emergencyContact2.cellNumber" required>
+              <input type="tel" class="form-control col-sm-6 col-md-6 col-lg-6" ui-mask="1(999) 999-9999" ng-model="client.emergencyContact2.cellNumber">
             </div>
         </form>
     </div>
     <div class="container-fluid col-sm-3 col-md-3 col-lg-3">
         <image src="http://emotibot.net/shared/post_media/images/full_sized/24653.png" class="container-fluid clientPhoto">
         <button>Add Contact Photo</button>
+    </div>
+    <div class="container-fluid col-sm-12">
+        <button ng-click="saveForm()" ng-disabled="!clientContactForm.$valid" class="btn">Save</button>
     </div>
 </div>

@@ -8,6 +8,9 @@ contactInfoControllerModule.controller('contactInfoController',['$scope', functi
     $scope.currentDate = new Date();
     $scope.client = {};
     $scope.client.gender = "Male";
+    $scope.$watch('client.DOB', function(){
+        $scope.calculateAge();
+    })
     $scope.calculateAge = function(){
         if($scope.client.DOB){
             var age = $scope.currentDate-$scope.client.DOB;
@@ -15,4 +18,30 @@ contactInfoControllerModule.controller('contactInfoController',['$scope', functi
             return $scope.client.age;
         }
     }
+    $scope.saveForm = function(){
+        var clientObject = $scope.clientName+"{"+$scope.client+"}";
+        console.log(JSON.stringify(clientObject));
+    }
 }]);
+contactInfoControllerModule.directive('phoneNumber', function() {
+    return{
+        require: 'ngModel',
+        restrict: 'A',
+        link: function(scope, element, attrs, modelCtrl){
+            modelCtrl.$parsers.push(function (phoneNumber) {
+                return phoneNumber.replace(/ /g,"");
+            });
+        }
+    }
+})
+contactInfoControllerModule.directive('uppercased', function () {
+    return {
+        require: 'ngModel',
+        link: function (scope, element, attrs, modelCtrl) {
+            modelCtrl.$parsers.push(function (input) {
+                return input ? input.toUpperCase() : "";
+            });
+            element.css("text-transform", "uppercase");
+        }
+    };
+});
